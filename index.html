@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>North Standard Brand Guide</title>
+  <style>
+    :root {
+      --charcoal: #1C1F1E;
+      --bone: #F4F1EA;
+      --forest: #123C2F;
+      --text: #1C1F1E;
+      --muted: #56605d;
+      --line: #d7d2c8;
+      --panel: #ffffff;
+      --radius: 12px;
+      --shadow: 0 0 0 1px rgba(28, 31, 30, 0.1);
+      --maxw: 1120px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Neue Haas Grotesk", Helvetica, Arial, system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bone);
+      line-height: 1.55;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 241, 234, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
+    }
+
+    .top-nav-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0.8rem 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .brand-block {
+      min-width: 220px;
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .brand-tagline {
+      margin: 0.15rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .toc {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.85rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .toc a:hover {
+      border-color: var(--line);
+      background: #fff;
+    }
+
+    .toc a:focus-visible,
+    button:focus-visible,
+    .logo-preview:focus-visible,
+    .chip[role="button"]:focus-visible {
+      outline: 3px solid var(--forest);
+      outline-offset: 2px;
+    }
+
+    main {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 1.5rem 1rem 4rem;
+    }
+
+    section {
+      scroll-margin-top: 6.5rem;
+      padding: 1.2rem 0 1.8rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: 0;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+      letter-spacing: -0.01em;
+    }
+
+    h2 {
+      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      margin-bottom: 0.8rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.55rem;
+    }
+
+    p {
+      margin: 0.6rem 0 0;
+      max-width: 75ch;
+    }
+
+    ul {
+      margin: 0.6rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .pillars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    .pillars li {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      background: #fff;
+      font-size: 0.9rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+    }
+
+    .checker {
+      border: 1px solid #e3ded4;
+      border-radius: 10px;
+      padding: 0.8rem;
+      background-image:
+        linear-gradient(45deg, #ece7de 25%, transparent 25%),
+        linear-gradient(-45deg, #ece7de 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ece7de 75%),
+        linear-gradient(-45deg, transparent 75%, #ece7de 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+      min-height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-preview {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-preview img {
+      max-width: 100%;
+      max-height: 180px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .meta {
+      margin-top: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .file-label {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      word-break: break-all;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.65rem;
+    }
+
+    button {
+      border: 1px solid var(--charcoal);
+      background: #fff;
+      color: var(--charcoal);
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #f8f6f0;
+    }
+
+    .color-swatch {
+      height: 76px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.35rem 0.55rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.85rem;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 0.5rem;
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .type-scale {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+    }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.6rem;
+      border-bottom: 1px dashed #ddd6ca;
+      padding: 0.5rem 0;
+    }
+
+    .type-row:last-child {
+      border-bottom: 0;
+    }
+
+    .logo-type {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-type .north {
+      font-weight: 700;
+    }
+
+    .logo-type .bar {
+      width: 2px;
+      height: 1.2rem;
+      background: var(--charcoal);
+    }
+
+    .logo-type .standard {
+      font-weight: 400;
+    }
+
+    .layout-example {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: auto 1px 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .layout-divider {
+      height: 72px;
+      background: var(--charcoal);
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .col {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+
+    .col h3 {
+      margin-bottom: 0.55rem;
+    }
+
+    .toast {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      background: var(--charcoal);
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      pointer-events: none;
+      z-index: 400;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 920px) {
+      .grid-3,
+      .type-grid,
+      .do-dont {
+        grid-template-columns: 1fr;
+      }
+
+      .layout-example {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .layout-divider {
+        width: 100%;
+        height: 1px;
+      }
+
+      .checker {
+        min-height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="top-nav-inner">
+      <div class="brand-block">
+        <p class="brand-name">North Standard</p>
+        <p class="brand-tagline">Clear Direction · Higher Standard</p>
+      </div>
+      <div class="toc" aria-label="Table of contents">
+        <a href="#overview">Overview</a>
+        <a href="#logos">Logos</a>
+        <a href="#colors">Colors</a>
+        <a href="#typography">Typography</a>
+        <a href="#layout">Layout</a>
+        <a href="#voice">Voice</a>
+        <a href="#do-nots">Do Nots</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h1>Brand Guide</h1>
+      <h2>Overview</h2>
+      <p>North Standard builds disciplined brand systems that create long term leverage. Clarity over chaos. Structure over randomness. Community over transactions.</p>
+      <ul class="pillars" aria-label="Brand pillars">
+        <li>Strategy</li>
+        <li>Clarity</li>
+        <li>Direction</li>
+        <li>Standard</li>
+      </ul>
+    </section>
+
+    <section id="logos">
+      <h2>Logos</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Lettermark</h3>
+          <div class="checker">
+            <button class="logo-preview" type="button" data-src-key="LETTERMARK" data-filename="north-standard-lettermark.png" aria-label="Download Lettermark logo">
+              <img id="lettermark-img" src="" alt="North Standard Lettermark logo">
+            </button>
+          </div>
+          <div class="meta">
+            <span class="file-label" id="lettermark-label"></span>
+          </div>
+          <div class="btn-row">
+            <button type="button" data-download="LETTERMARK" data-filename="north-standard-lettermark.png">Download PNG</button>
+            <button type="button" data-copy-src="LETTERMARK">Copy file path</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Wordmark</h3>
+          <div class="checker">
+            <button class="logo-preview" type="button" data-src-key="WORDMARK" data-filename="north-standard-wordmark.png" aria-label="Download Wordmark logo">
+              <img id="wordmark-img" src="" alt="North Standard Wordmark logo">
+            </button>
+          </div>
+          <div class="meta">
+            <span class="file-label" id="wordmark-label"></span>
+          </div>
+          <div class="btn-row">
+            <button type="button" data-download="WORDMARK" data-filename="north-standard-wordmark.png">Download PNG</button>
+            <button type="button" data-copy-src="WORDMARK">Copy file path</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Favicon</h3>
+          <div class="checker">
+            <button class="logo-preview" type="button" data-src-key="FAVICON" data-filename="north-standard-favicon.png" aria-label="Download Favicon logo">
+              <img id="favicon-img" src="" alt="North Standard Favicon badge logo">
+            </button>
+          </div>
+          <div class="meta">
+            <span class="file-label" id="favicon-label"></span>
+          </div>
+          <div class="btn-row">
+            <button type="button" data-download="FAVICON" data-filename="north-standard-favicon.png">Download PNG</button>
+            <button type="button" data-copy-src="FAVICON">Copy file path</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="colors">
+      <h2>Colors</h2>
+      <div class="grid-3">
+        <article class="card">
+          <div class="color-swatch" style="background:#1C1F1E"></div>
+          <h3>Deep Charcoal</h3>
+          <p><strong>Role:</strong> Primary</p>
+          <span class="chip" role="button" tabindex="0" data-copy-hex="#1C1F1E" aria-label="Copy hex #1C1F1E">#1C1F1E</span>
+          <div class="btn-row">
+            <button type="button" data-copy-hex="#1C1F1E">Copy hex</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="color-swatch" style="background:#F4F1EA"></div>
+          <h3>Bone White</h3>
+          <p><strong>Role:</strong> Secondary</p>
+          <span class="chip" role="button" tabindex="0" data-copy-hex="#F4F1EA" aria-label="Copy hex #F4F1EA">#F4F1EA</span>
+          <div class="btn-row">
+            <button type="button" data-copy-hex="#F4F1EA">Copy hex</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="color-swatch" style="background:#123C2F"></div>
+          <h3>Deep Forest Green</h3>
+          <p><strong>Role:</strong> Accent</p>
+          <span class="chip" role="button" tabindex="0" data-copy-hex="#123C2F" aria-label="Copy hex #123C2F">#123C2F</span>
+          <div class="btn-row">
+            <button type="button" data-copy-hex="#123C2F">Copy hex</button>
+          </div>
+        </article>
+      </div>
+      <ul>
+        <li>Green is used sparingly.</li>
+        <li>Charcoal dominates.</li>
+        <li>Bone white is canvas.</li>
+      </ul>
+    </section>
+
+    <section id="typography">
+      <h2>Typography</h2>
+      <p>Primary font: Neue Haas Grotesk, with Helvetica, Arial, and system-ui fallbacks.</p>
+      <p>Bold for headlines, Regular for body, avoid Light and Condensed.</p>
+
+      <div class="type-grid">
+        <div class="type-scale" aria-label="Type scale preview">
+          <div class="type-row"><span style="font-size:2rem;font-weight:700;">H1 Sample</span><span>H1</span></div>
+          <div class="type-row"><span style="font-size:1.6rem;font-weight:700;">H2 Sample</span><span>H2</span></div>
+          <div class="type-row"><span style="font-size:1.25rem;font-weight:700;">H3 Sample</span><span>H3</span></div>
+          <div class="type-row"><span style="font-size:1rem;font-weight:400;">Body sample text for core messaging.</span><span>Body</span></div>
+          <div class="type-row"><span style="font-size:0.82rem;font-weight:400;">Caption for notes and metadata.</span><span>Caption</span></div>
+        </div>
+
+        <div class="logo-type" aria-label="Logo typography style">
+          <span class="north">North</span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="standard">Standard</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="layout">
+      <h2>Layout &amp; Grid</h2>
+      <ul>
+        <li>Grid-based composition.</li>
+        <li>Generous whitespace.</li>
+        <li>Left aligned hierarchy.</li>
+        <li>Vertical line/divider motif allowed.</li>
+      </ul>
+
+      <div class="layout-example" aria-label="Layout motif example">
+        <div>
+          <h3>Headline</h3>
+          <p>Clear directional statement.</p>
+        </div>
+        <div class="layout-divider" aria-hidden="true"></div>
+        <div>
+          <h3>Subhead</h3>
+          <p>Supporting line with concise context and structure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <h2>Voice &amp; Messaging</h2>
+      <div class="do-dont">
+        <article class="col">
+          <h3>Do</h3>
+          <ul>
+            <li>"We build systems that scale."</li>
+            <li>"Clarity creates leverage."</li>
+            <li>"Clear direction. Higher standard."</li>
+          </ul>
+        </article>
+
+        <article class="col">
+          <h3>Don't</h3>
+          <ul>
+            <li>"10x your growth!"</li>
+            <li>"Crush it!"</li>
+            <li>"Blow up your engagement!"</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="do-nots">
+      <h2>Do Nots</h2>
+      <ul>
+        <li>No gradients.</li>
+        <li>No shadows.</li>
+        <li>No rotation/distortion of logos.</li>
+        <li>No unapproved colors.</li>
+        <li>No busy decorative marks.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const LETTERMARK_SRC = "./assets/lettermark.png";
+    const WORDMARK_SRC = "./assets/wordmark.png";
+    const FAVICON_SRC = "./assets/favicon.png";
+    const BRAND = { name: "North Standard", tagline: "Clear Direction · Higher Standard" };
+
+    const LOGO_MAP = {
+      LETTERMARK: LETTERMARK_SRC,
+      WORDMARK: WORDMARK_SRC,
+      FAVICON: FAVICON_SRC
+    };
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(showToast._timer);
+      showToast._timer = setTimeout(() => toast.classList.remove("show"), 1400);
+    }
+
+    async function copyToClipboard(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast(`Copied ${text}`);
+      } catch (_err) {
+        const input = document.createElement("textarea");
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+        showToast(`Copied ${text}`);
+      }
+    }
+
+    async function downloadImage(src, filename) {
+      if (!src || src === "PASTE_HERE") {
+        showToast("Set logo source path first");
+        return;
+      }
+
+      const link = document.createElement("a");
+      link.href = src;
+      link.download = filename || "logo.png";
+      link.rel = "noopener";
+
+      try {
+        const sameOrigin = new URL(src, window.location.href).origin === window.location.origin;
+        if (sameOrigin || src.startsWith("data:") || src.startsWith("blob:")) {
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          showToast(`Downloading ${filename}`);
+          return;
+        }
+
+        const response = await fetch(src, { mode: "cors" });
+        if (!response.ok) throw new Error("Fetch failed");
+        const blob = await response.blob();
+        const blobUrl = URL.createObjectURL(blob);
+
+        link.href = blobUrl;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(blobUrl);
+        showToast(`Downloading ${filename}`);
+      } catch (_err) {
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        showToast("Download triggered");
+      }
+    }
+
+    function wireLogoAssets() {
+      document.getElementById("lettermark-img").src = LETTERMARK_SRC;
+      document.getElementById("wordmark-img").src = WORDMARK_SRC;
+      document.getElementById("favicon-img").src = FAVICON_SRC;
+
+      document.getElementById("lettermark-label").textContent = LETTERMARK_SRC;
+      document.getElementById("wordmark-label").textContent = WORDMARK_SRC;
+      document.getElementById("favicon-label").textContent = FAVICON_SRC;
+    }
+
+    function initCopyActions() {
+      document.querySelectorAll("[data-copy-hex]").forEach((el) => {
+        el.addEventListener("click", () => copyToClipboard(el.dataset.copyHex));
+        el.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            copyToClipboard(el.dataset.copyHex);
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-copy-src]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const src = LOGO_MAP[btn.dataset.copySrc] || "";
+          copyToClipboard(src);
+        });
+      });
+    }
+
+    function initDownloads() {
+      document.querySelectorAll("[data-download]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const key = btn.dataset.download;
+          downloadImage(LOGO_MAP[key], btn.dataset.filename);
+        });
+      });
+
+      document.querySelectorAll(".logo-preview").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const key = btn.dataset.srcKey;
+          downloadImage(LOGO_MAP[key], btn.dataset.filename);
+        });
+      });
+    }
+
+    function initBrandText() {
+      document.title = `${BRAND.name} Brand Guide`;
+      const nameNode = document.querySelector(".brand-name");
+      const tagNode = document.querySelector(".brand-tagline");
+      if (nameNode) nameNode.textContent = BRAND.name;
+      if (tagNode) tagNode.textContent = BRAND.tagline;
+    }
+
+    initBrandText();
+    wireLogoAssets();
+    initCopyActions();
+    initDownloads();
+  </script>
+</body>
+</html>
